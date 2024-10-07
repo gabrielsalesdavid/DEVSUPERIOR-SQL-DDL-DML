@@ -31,6 +31,8 @@ CREATE TABLE tb_funcionario(
 
 DROP TABLE tb_funcionario;
 
+ALTER TABLE tb_funcionario ADD data_nasc DATE;
+
 /*DML(
     SELECT,
     INSERT,
