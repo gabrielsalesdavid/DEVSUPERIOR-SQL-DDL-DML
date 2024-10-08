@@ -69,6 +69,8 @@ CREATE TABLE tb_funcionario(
     FOREIGN KEY(cod_depto) REFERENCES tb_departamento(id)
 );
 
+DELETE FROM tb_cargo WHERE id = 5;
+
 /*DCL(
     GRANT,
     REVOKE
