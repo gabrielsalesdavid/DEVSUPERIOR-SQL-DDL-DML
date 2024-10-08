@@ -35,6 +35,12 @@ DELETE FROM tb_funcionario WHERE id = 10;
 
 DELETE FROM tb_departamento WHERE id = 1;
 
+SELECT * FROM tb_funcionario;
+SELECT * FROM tb_cargo;
+SELECT * FROM tb_departamento;
+
+
+
 /*DCL(
     GRANT,
     REVOKE
