@@ -55,6 +55,8 @@ CREATE TABLE tb_funcionario(
 
 DELETE FROM tb_cargo WHERE id = 5;
 
+SELECT * FROM tb_funcionario ORDER BY cod_cargo DESC;
+
 /*DCL(
     GRANT,
     REVOKE
