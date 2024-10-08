@@ -31,7 +31,9 @@ UPDATE tb_funcionario SET nome = 'Ricardo Fernandes Oliveira' WHERE id = 4;
 
 UPDATE tb_funcionario SET cod_cargo = 3 WHERE id = 3;
 
+DELETE FROM tb_funcionario WHERE id = 10;
 
+DELETE FROM tb_departamento WHERE id = 1;
 
 /*DCL(
     GRANT,
