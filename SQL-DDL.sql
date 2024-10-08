@@ -52,6 +52,12 @@ ALTER TABLE table_exemple ADD PRIMARY KEY(id);
 
 ALTER TABLE table_exemple DROP CONSTRAINT table_exemple_pkey;
 
+DROP TABLE table_exemple;
+
+ALTER TABLE tb_funcionario DROP CONSTRAINT tb_funcionario_cod_cargo_fkey;
+
+ALTER TABLE tb_funcionario ADD FOREIGN KEY(cod_cargo) REFERENCES tb_cargo(id);
+
 /*DML(
     SELECT,
     INSERT,
