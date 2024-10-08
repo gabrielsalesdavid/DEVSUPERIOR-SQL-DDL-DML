@@ -39,6 +39,7 @@ SELECT * FROM tb_funcionario;
 SELECT * FROM tb_cargo;
 SELECT * FROM tb_departamento;
 
+DELETE FROM tb_cargo WHERE id = 5;
 
 
 /*DCL(
