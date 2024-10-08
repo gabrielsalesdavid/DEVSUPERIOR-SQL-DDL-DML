@@ -57,22 +57,3 @@ DROP TABLE table_exemple;
 ALTER TABLE tb_funcionario DROP CONSTRAINT tb_funcionario_cod_cargo_fkey;
 
 ALTER TABLE tb_funcionario ADD FOREIGN KEY(cod_cargo) REFERENCES tb_cargo(id);
-
-/*DML(
-    SELECT,
-    INSERT,
-    UPDATE,
-    DELETE,
-    CALL
-)*/
-
-/*DCL(
-    GRANT,
-    REVOKE
-)*/
-
-/*TCL(
-    COMMIT,
-    SAVEPOINT,
-    ROLLBACK
-)*/
