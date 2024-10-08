@@ -57,6 +57,18 @@ DELETE FROM tb_cargo WHERE id = 5;
 
 SELECT * FROM tb_funcionario ORDER BY cod_cargo DESC;
 
+CREATE TABLE tb_funcionario(
+    id INT,
+    nome VARCHAR(30) NOT NULL,
+    data_adm DATE,
+    sexo CHAR(1),
+    cod_cargo INT NOT NULL,
+    cod_depto INT NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY(cod_cargo) REFERENCES tb_cargo(id) ON DELETE CASCADE,
+    FOREIGN KEY(cod_depto) REFERENCES tb_departamento(id)
+);
+
 /*DCL(
     GRANT,
     REVOKE
