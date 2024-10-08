@@ -27,6 +27,7 @@ INSERT INTO tb_funcionario(id, nome, data_adm, sexo, cod_cargo, cod_depto) VALUE
 INSERT INTO tb_funcionario(id, nome, data_adm, sexo, cod_cargo, cod_depto) VALUES (9, 'Leandro Chaves', '2017-05-13', 'M', 5, 2);
 INSERT INTO tb_funcionario(id, nome, data_adm, sexo, cod_cargo, cod_depto) VALUES (10, 'João Marques', '2021-03-15', 'M', 3, 1);
 
+
 /*DCL(
     GRANT,
     REVOKE
