@@ -1,4 +1,5 @@
 /* DDL */
+
 CREATE TABLE tb_local_nascimento(
     codigo INT PRIMARY KEY,
     cidade VARCHAR(10) NOT NULL,
@@ -25,6 +26,10 @@ CREATE TABLE tb_matricula(
     FOREIGN KEY(cod_disc) REFERENCES tb_disciplina(id)
 );
 
+/* Ateração de dados da tabela do tipo caracter de tamanho 20 */
+
 ALTER TABLE tb_funcionario ALTER COLUMN email TYPE VARCHAR(20);
+
+/* Ateração de dados da tabela exclusão de chave primaria */
 
 ALTER TABLE tb_matricula DROP CONSTRAINT tb_matricula_pkey;
