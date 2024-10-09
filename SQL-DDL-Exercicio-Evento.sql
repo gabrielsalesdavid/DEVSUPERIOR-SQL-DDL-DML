@@ -1,4 +1,4 @@
-/* DML */
+/* DDL */
 CREATE TABLE tb_local_nascimento(
     codigo INT PRIMARY KEY,
     cidade VARCHAR(10) NOT NULL,
@@ -24,3 +24,5 @@ CREATE TABLE tb_matricula(
     FOREIGN KEY(cod_aluno) REFERENCES tb_aluno(id),
     FOREIGN KEY(cod_disc) REFERENCES tb_disciplina(id)
 );
+
+ALTER TABLE tb_funcionario ALTER COLUMN email TYPE VARCHAR(20);
