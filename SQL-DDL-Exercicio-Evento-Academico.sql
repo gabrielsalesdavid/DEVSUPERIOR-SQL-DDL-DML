@@ -22,7 +22,7 @@ CREATE TABLE tb_bloco(
 );
 
 CREATE TABLE tb_participante(
-    id INT NOT NULL,
+    id INT PRIMARY KEY NOT NULL,
     nome VARCHAR(30) NOT NULL,
     email VARCHAR(30) NOT NULL,
     ativ_id SERIAL,
@@ -30,8 +30,9 @@ CREATE TABLE tb_participante(
 );
 
 CREATE TABLE tb_participacao(
-    parti_id INT,
-    ativ_id INT,
-    PRIMARY KEY(parti_id) REFERENCES tb_participante(parti_id),
+    parti_id SERIAL,
+    ativ_id SERIAL,
+	PRIMARY KEY(parti_id),
+    FOREIGN KEY(parti_id) REFERENCES tb_participante(id),
     FOREIGN KEY(ativ_id) REFERENCES tb_atividade(id)
 );
