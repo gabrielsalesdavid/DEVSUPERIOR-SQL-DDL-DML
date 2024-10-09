@@ -26,3 +26,5 @@ CREATE TABLE tb_matricula(
 );
 
 ALTER TABLE tb_funcionario ALTER COLUMN email TYPE VARCHAR(20);
+
+ALTER TABLE tb_matricula DROP CONSTRAINT tb_matricula_pkey;
