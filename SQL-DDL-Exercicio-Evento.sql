@@ -24,7 +24,7 @@ CREATE TABLE tb_matricula(
     cod_disc INT,
 	PRIMARY KEY(cod_aluno, cod_turma, cod_disc),
     FOREIGN KEY(cod_aluno) REFERENCES tb_aluno(codigo),
-    FOREIGN KEY(cod_disc) REFERENCES tb_disciplina(codigo),
+    FOREIGN KEY(cod_disc) REFERENCES tb_disciplina(codigo)
 );
 
 /* Ateração de dados da tabela do tipo caracter de tamanho 20 */
