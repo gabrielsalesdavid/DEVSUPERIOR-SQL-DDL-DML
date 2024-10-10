@@ -1,38 +1,39 @@
 /* DDL */
 
 CREATE TABLE tb_categoria(
-    id INT PRIMARY KEY NOT NULL,
+    id SERIAL PRIMARY KEY,
     descricao VARCHAR(40) NOT NULL
 );
 
 CREATE TABLE tb_atividade(
-    id INT PRIMARY KEY NOT NULL,
-    descricao VARCHAR(40) NOT NULL,
-    preco FLOAT NOT NULL,
-    cat_id SERIAL,
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(40) NOT NULL,
+    descricao VARCHAR(40),
+    preco FLOAT,
+    cat_id INT NOT NULL,
     FOREIGN KEY(cat_id) REFERENCES tb_categoria(id)
 );
 
 CREATE TABLE tb_bloco(
-    id INT PRIMARY KEY NOT NULL,
-    inicio TIMESTAMP NOT NULL,
-    fim TIMESTAMP NOT NULL,
-    ativ_id SERIAL,
+    id SERIAL PRIMARY KEY,
+    inicio TIMESTAMP,
+    fim TIMESTAMP,
+    ativ_id INT NOT NULL,
     FOREIGN KEY(ativ_id) REFERENCES tb_atividade(id)
 );
 
 CREATE TABLE tb_participante(
-    id INT PRIMARY KEY NOT NULL,
+    id SERIAL PRIMARY KEY,
     nome VARCHAR(30) NOT NULL,
-    email VARCHAR(30) NOT NULL,
-    ativ_id SERIAL,
+    email VARCHAR(30) UNIQUE NOT NULL,
+    ativ_id INT NOT NULL,
     FOREIGN KEY(ativ_id) REFERENCES tb_atividade(id)
 );
 
 CREATE TABLE tb_participacao(
-    parti_id SERIAL,
-    ativ_id SERIAL,
-	PRIMARY KEY(parti_id),
+    parti_id INT,
+    ativ_id INT,
+	PRIMARY KEY(parti_id, ativ_id),
     FOREIGN KEY(parti_id) REFERENCES tb_participante(id),
     FOREIGN KEY(ativ_id) REFERENCES tb_atividade(id)
 );
