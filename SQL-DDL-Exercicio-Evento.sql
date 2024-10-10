@@ -10,7 +10,7 @@ CREATE TABLE tb_aluno(
     codigo SERIAL PRIMARY KEY,
     nome VARCHAR(20) NOT NULL,
     cod_nasc INT NOT NULL,
-    FOREIGN KEY(cod_nasc) REFERENCES tb_local_nascimento(id)
+    FOREIGN KEY(cod_nasc) REFERENCES tb_local_nascimento(codigo)
 );
 
 CREATE TABLE tb_disciplina(
