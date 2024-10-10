@@ -21,7 +21,7 @@ CREATE TABLE tb_disciplina(
 CREATE TABLE tb_participacao(
     cod_aluno INT,
     cod_turma INT,
-    cod_disc,
+    cod_disc INT,
 	PRIMARY KEY(cod_aluno, cod_turma, cod_disc),
     FOREIGN KEY(cod_aluno) REFERENCES tb_aluno(codigo),
     FOREIGN KEY(cod_disc) REFERENCES tb_disciplina(codigo),
