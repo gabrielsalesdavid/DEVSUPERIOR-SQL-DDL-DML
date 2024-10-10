@@ -25,9 +25,7 @@ CREATE TABLE tb_bloco(
 CREATE TABLE tb_participante(
     id SERIAL PRIMARY KEY,
     nome VARCHAR(30) NOT NULL,
-    email VARCHAR(30) UNIQUE NOT NULL,
-    ativ_id INT NOT NULL,
-    FOREIGN KEY(ativ_id) REFERENCES tb_atividade(id)
+    email VARCHAR(30) UNIQUE NOT NULL
 );
 
 CREATE TABLE tb_participacao(
