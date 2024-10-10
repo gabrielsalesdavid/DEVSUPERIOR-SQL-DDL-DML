@@ -18,7 +18,7 @@ CREATE TABLE tb_disciplina(
     nome VARCHAR(20) NOT NULL
 );
 
-CREATE TABLE tb_participacao(
+CREATE TABLE tb_matricula(
     cod_aluno INT,
     cod_turma INT,
     cod_disc INT,
