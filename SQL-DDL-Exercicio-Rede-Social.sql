@@ -6,7 +6,7 @@ CREATE TABLE tb_usuario(
     website VARCHAR(30),
     genero CHAR(1) NOT NULL,
     telefone VARCHAR(20),
-    foto_perfil_id INT,
+    foto_perfil_id VARCHAR(30),
     FOREIGN KEY(foto_perfil_id) REFERENCES tb_foto(uri)
 );
 
