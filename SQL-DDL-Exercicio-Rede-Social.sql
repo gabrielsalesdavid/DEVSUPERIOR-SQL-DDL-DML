@@ -35,7 +35,7 @@ CREATE TABLE tb_album(
 );
 
 CREATE TABLE tb_foto(
-    uri VARCHAR(30) PRIMARY KEY NOT NULL,
+    uri VARCHAR(30) PRIMARY KEY,
     instante_postagem TIMESTAMP NOT NULL,
     postagem_id INT,
     usuario_id INT,
