@@ -38,7 +38,7 @@ CREATE TABLE tb_foto(
     uri VARCHAR(30) PRIMARY KEY,
     instante_postagem TIMESTAMP NOT NULL,
     postagem_id INT,
-    usuario_id INT,
+    usuario_id INT NOT NULL,
     album_id INT,
     FOREIGN KEY(postagem_id) REFERENCES tb_postagem(id),
     FOREIGN KEY(usuario_id) REFERENCES tb_usuario(id),
