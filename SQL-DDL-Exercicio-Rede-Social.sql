@@ -7,7 +7,7 @@ CREATE TABLE tb_usuario(
     genero CHAR(1) NOT NULL,
     telefone VARCHAR(20),
     foto_perfil_id INT,
-    FOREIGN KEY(foto_perfil_id) REFERENCES tb_foto(id)
+    FOREIGN KEY(foto_perfil_id) REFERENCES tb_foto(uri)
 );
 
 CREATE TABLE tb_seguidores(
