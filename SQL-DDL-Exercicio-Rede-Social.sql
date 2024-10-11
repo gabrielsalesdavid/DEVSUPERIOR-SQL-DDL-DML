@@ -22,7 +22,7 @@ CREATE TABLE tb_postagem(
     id SERIAL PRIMARY KEY,
     texto VARCHAR(20) NOT NULL,
     istante TIMESTAMP NOT NULL,
-    autor_id INT,
+    autor_id INT NOT NULL,
     FOREIGN KEY(autor_id) REFERENCES tb_usuario(id)
 );
 
