@@ -29,7 +29,7 @@ CREATE TABLE tb_postagem(
 CREATE TABLE tb_album(
     id SERIAL PRIMARY KEY,
     isntante_postagem TIMESTAMP NOT NULL,
-    usuario_id INT,
+    usuario_id INT NOT NULL,
     FOREIGN KEY(usuarui_id) REFERENCES tb_usuario(id)
 );
 
