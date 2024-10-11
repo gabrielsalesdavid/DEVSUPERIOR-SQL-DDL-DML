@@ -10,8 +10,8 @@ INSERT INTO tb_seguidores(seguidor_id, seguido_id) VALUES (1, 4);
 INSERT INTO tb_seguidores(seguidor_id, seguido_id) VALUES (3, 4);
 INSERT INTO tb_seguidores(seguidor_id, seguido_id) VALUES (2, 4);
 
-INSERT INTO tb_postagem(texto, instante_postagem, usuario_id) VALUES ('#partiu festa"', TIMESTAMP WITH TIME ZONE '2017-08-09T22:34:20Z', 4);
-INSERT INTO tb_postagem(texto, instante_postagem, usuario_id) VALUES ('Bom dia pessoal!', TIMESTAMP WITH TIME ZONE '2017-08-10T13:50:00Z', 4);
+INSERT INTO tb_postagem(texto, instante, usuario_id) VALUES ('#partiu festa"', TIMESTAMP WITH TIME ZONE '2017-08-09T22:34:20Z', 4);
+INSERT INTO tb_postagem(texto, instante, usuario_id) VALUES ('Bom dia pessoal!', TIMESTAMP WITH TIME ZONE '2017-08-10T13:50:00Z', 4);
 
 INSERT INTO tb_album(titulo, instante_postagem, usuario_id) VALUES ('Férias de verão', TIMESTAMP WITH TIME ZONE '2017-01-13T16:50:13Z', 3);
 
