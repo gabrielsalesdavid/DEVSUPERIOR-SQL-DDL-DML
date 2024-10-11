@@ -49,3 +49,5 @@ CREATE TABLE tb_resultado(
     FOREIGN KEY(aluno_cpf) REFERENCES tb_aluno(cpf),
     FOREIGN KEY(avaliacao_id) REFERENCES tb_avaliacao(id)
 );
+
+ALTER TABLE tb_aluno ALTER COLUMN cpf TYPE VARCHAR(20);
