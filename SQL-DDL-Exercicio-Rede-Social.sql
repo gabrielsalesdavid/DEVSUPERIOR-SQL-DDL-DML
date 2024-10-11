@@ -44,3 +44,5 @@ CREATE TABLE tb_foto(
     FOREIGN KEY(usuario_id) REFERENCES tb_usuario(id),
     FOREIGN KEY(album_id) REFERENCES tb_album(id)
 );
+
+ALTER TABLE tb_usuario ADD FOREIGN KEY(foto_perfil_id) REFERENCES tb_foto(uri);
