@@ -19,7 +19,7 @@ CREATE TABLE tb_turma(
 );
 
 CREATE TABLE tb_aluno(
-    cpf VARCHAR PRIMARY KEY NOT NULL,
+    cpf VARCHAR(20) PRIMARY KEY NOT NULL,
     nome VARCHAR(30) NOT NULL,
     nascimento DATE NOT NULL
 );
@@ -42,10 +42,10 @@ CREATE TABLE tb_avaliacao(
 );
 
 CREATE TABLE tb_resultado(
-    aluno_id INT,
+    aluno_cpf VARCHAR,
     avaliacao_id INT,
     nota_obtida FLOAT NOT NULL,
-    PRIMARY KEY(aluno_id, avalicao_id),
-    FOREIGN KEY(aluno_id) REFERENCES tb_aluno(id),
+    PRIMARY KEY(aluno_cpf, avaliacao_id),
+    FOREIGN KEY(aluno_cpf) REFERENCES tb_aluno(cpf),
     FOREIGN KEY(avaliacao_id) REFERENCES tb_avaliacao(id)
 );
