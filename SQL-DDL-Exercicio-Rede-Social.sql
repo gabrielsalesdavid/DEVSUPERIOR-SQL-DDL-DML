@@ -30,7 +30,7 @@ CREATE TABLE tb_album(
     titulo VARCHAR(30),
     isntante_postagem TIMESTAMP NOT NULL,
     usuario_id INT NOT NULL,
-    FOREIGN KEY(usuarui_id) REFERENCES tb_usuario(id)
+    FOREIGN KEY(usuario_id) REFERENCES tb_usuario(id)
 );
 
 CREATE TABLE tb_foto(
