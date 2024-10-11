@@ -26,10 +26,10 @@ CREATE TABLE tb_aluno(
 
 CREATE TABLE tb_matricula(
     turma_id INT NOT NULL,
-    aluno_id INT NOT NULL,
+    aluno_cpf VARCHAR NOT NULL,
     data_matricula DATE NOT NULL,
     prestacoes INT NOT NULL,
-    PRIMARY KEY(turma_id, aluno_id),
+    PRIMARY KEY(turma_id, aluno_cpf),
     FOREIGN KEY(turma_id) REFERENCES tb_turma(id)
 );
 
@@ -51,3 +51,7 @@ CREATE TABLE tb_resultado(
 );
 
 ALTER TABLE tb_aluno ALTER COLUMN cpf TYPE VARCHAR(20);
+
+ALTER TABLE tb_matricula RENAME aluno_id TO aluno_cpf;
+
+ALTER TABLE tb_matricula ALTER COLUMN cpf TYPE VARCHAR;
