@@ -1,5 +1,5 @@
 CREATE TABLE tb_usuario(
-    id SERIAL PRIMARY KEY,
+    id INT PRIMARY KEY,
     nome VARCHAR(40) NOT NULL,
     email VARCHAR(30) NOT NULL,
     nascimento DATE,
@@ -18,17 +18,17 @@ CREATE TABLE tb_seguidores(
 );
 
 CREATE TABLE tb_postagem(
-    id SERIAL PRIMARY KEY,
+    id INT PRIMARY KEY,
     texto VARCHAR(20) NOT NULL,
-    istante TIMESTAMP NOT NULL,
+    instante TIMESTAMP NOT NULL,
     autor_id INT NOT NULL,
     FOREIGN KEY(autor_id) REFERENCES tb_usuario(id)
 );
 
 CREATE TABLE tb_album(
-    id SERIAL PRIMARY KEY,
+    id INT PRIMARY KEY,
     titulo VARCHAR(30),
-    isntante_postagem TIMESTAMP NOT NULL,
+    instante_postagem TIMESTAMP NOT NULL,
     usuario_id INT NOT NULL,
     FOREIGN KEY(usuario_id) REFERENCES tb_usuario(id)
 );
@@ -45,3 +45,13 @@ CREATE TABLE tb_foto(
 );
 
 ALTER TABLE tb_usuario ADD FOREIGN KEY(foto_perfil_id) REFERENCES tb_foto(uri);
+
+ALTER TABLE tb_usuario ALTER COLUMN id TYPE INT;
+
+ALTER TABLE tb_postagem RENAME istante TO instante;
+
+ALTER TABLE tb_album RENAME isntante_postagem TO instante_postagem;
+
+ALTER TABLE tb_postagem ALTER COLUMN id TYPE INT;
+
+ALTER TABLE tb_album ALTER COLUMN id TYPE INT;
