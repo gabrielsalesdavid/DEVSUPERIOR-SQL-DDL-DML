@@ -1,9 +1,8 @@
-/* DDL */
-
 CREATE TABLE tb_categoria(
-    id INT PRIMARY KEY NOT NULL,
-    descrição VARCHAR(10) NOT NULL,
-    preco_diario FLOAT NOT NULL
+    id INT NOT NULL,
+    descricao VARCHAR(10) NOT NULL,
+    preco_diario FLOAT NOT NULL,
+	PRIMARY KEY(id)
 );
 
 CREATE TABLE tb_carro(
@@ -16,42 +15,45 @@ CREATE TABLE tb_carro(
     cat_id INT,
     sede_id INT,
     PRIMARY KEY(id, placa),
-    FOREIGN KEY(id) REFERENCES tb_carro(id),
-    FOREIGN KEY(placa) REFERENCES tb_carro(placa),
     FOREIGN KEY(cat_id) REFERENCES tb_categoria(id)
 );
 
 CREATE TABLE tb_sede(
     codigo INT NOT NULL,
     localidade_s FLOAT NOT NULL,
-    localidade_w FLOAT NOT NULL
+    localidade_w FLOAT NOT NULL,
+	PRIMARY KEY(codigo)
 );
 
 CREATE TABLE tb_endereco(
     id INT NOT NULL,
     logradouro VARCHAR(30) NOT NULL,
-    numer VARCHAR(5) NOT NULL,
+    numero VARCHAR(5) NOT NULL,
     complemento VARCHAR(20) NOT NULL,
     bairro VARCHAR(30) NOT NULL,
     cep VARCHAR(20) NOT NULL,
-    cidade_id INT
+    cidade_id INT,
+	PRIMARY KEY(id)
 );
 
-CREATE TABLE tb_ciadade(
+CREATE TABLE tb_cidade(
     id INT NOT NULL,
     nome VARCHAR(20) NOT NULL,
-    estado_id INT
+    estado_id INT,
+	PRIMARY KEY(id)
 );
 
 CREATE TABLE tb_estado(
     id INT NOT NULL,
-    nome VARCHAR(20) NOT NULL
+    nome VARCHAR(20) NOT NULL,
+	PRIMARY KEY(id)
 );
 
 CREATE TABLE tb_cliente(
     cpf VARCHAR(20) NOT NULL,
     nome VARCHAR(20) NOT NULL,
-    email VARCHAR(20) UNIQUE NOT NULL
+    email VARCHAR(20) UNIQUE NOT NULL,
+	PRIMARY KEY(cpf)
 );
 
 CREATE TABLE tb_telefone(
@@ -65,11 +67,10 @@ CREATE TABLE tb_alocacao(
     id INT NOT NULL,
     instante_locacao TIMESTAMP NOT NULL,
     instante_devolucao TIMESTAMP NOT NULL,
-    carro_id INT,
+    carro_id VARCHAR(10) UNIQUE,
     local_retirada_id INT,
     PRIMARY KEY(id),
-    FOREIGN KEY(carro_id) REFERENCES tb_carro(id),
-    FOREIGN KEY(local_retirada) REFERENCES tb_sede(id)
+    FOREIGN KEY(carro_id) REFERENCES tb_carro(placa)
 );
 
 CREATE TABLE tb_locacao_diaria(
@@ -86,6 +87,8 @@ CREATE TABLE tb_locaca_periodo(
 
 ALTER TABLE tb_carro ADD FOREIGN KEY(sede_id) REFERENCES tb_sede(codigo);
 
-ALTER TABLE tb_endereco FOREIGN KEY(cidade_id) REFERENCES tb_cidade(id);
+ALTER TABLE tb_endereco ADD FOREIGN KEY(cidade_id) REFERENCES tb_cidade(id);
 
-ALTER TABLE tb_cidade FOREIGN KEY(estado_id) REFERENCES tb_estado(id);
+ALTER TABLE tb_cidade ADD FOREIGN KEY(estado_id) REFERENCES tb_estado(id);
+
+ALTER TABLE tb_alocacao ADD FOREIGN KEY(local_retirada_id) REFERENCES tb_sede(codigo);
