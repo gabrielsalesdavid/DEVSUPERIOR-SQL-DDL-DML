@@ -81,7 +81,7 @@ CREATE TABLE tb_locacao_diaria(
     PRIMARY KEY(id)
 );
 
-CREATE TABLE tb_locaca_periodo(
+CREATE TABLE tb_locacao_periodo(
     id INT NOT NULL,
     porcentagem FLOAT NOT NULL,
     PRIMARY KEY(id)
