@@ -67,6 +67,7 @@ CREATE TABLE tb_alocacao(
     id INT NOT NULL,
     instante_locacao TIMESTAMP NOT NULL,
     instante_devolucao TIMESTAMP NOT NULL,
+	cliente_id VARCHAR(20),
     carro_id VARCHAR(10) UNIQUE,
     local_retirada_id INT,
     PRIMARY KEY(id),
@@ -90,5 +91,7 @@ ALTER TABLE tb_carro ADD FOREIGN KEY(sede_id) REFERENCES tb_sede(codigo);
 ALTER TABLE tb_endereco ADD FOREIGN KEY(cidade_id) REFERENCES tb_cidade(id);
 
 ALTER TABLE tb_cidade ADD FOREIGN KEY(estado_id) REFERENCES tb_estado(id);
+
+ALTER TABLE tb_alocacao ADD FOREIGN KEY(cliente_id) REFERENCES tb_cliente(cpf);
 
 ALTER TABLE tb_alocacao ADD FOREIGN KEY(local_retirada_id) REFERENCES tb_sede(codigo);
