@@ -87,6 +87,8 @@ CREATE TABLE tb_locacao_periodo(
     PRIMARY KEY(id)
 );
 
+/* Adiconando a chave estrangeira na tabela passando os ID's */
+
 ALTER TABLE tb_carro ADD FOREIGN KEY(sede_id) REFERENCES tb_sede(codigo);
 
 ALTER TABLE tb_endereco ADD FOREIGN KEY(cidade_id) REFERENCES tb_cidade(id);
@@ -100,3 +102,5 @@ ALTER TABLE tb_locacao ADD FOREIGN KEY(carro_id) REFERENCES tb_carro(id);
 ALTER TABLE tb_locacao ADD FOREIGN KEY(local_retirada_id) REFERENCES tb_sede(codigo);
 
 ALTER TABLE tb_locacao_diaria ADD FOREIGN KEY(id) REFERENCES tb_locacao(id);
+
+ALTER TABLE tb_locacao_periodo ADD FOREIGN KEY(id) REFERENCES tb_locacao(id);
