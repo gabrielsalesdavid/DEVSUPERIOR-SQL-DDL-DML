@@ -29,3 +29,7 @@ INSERT INTO tb_locacao_diaria(id. dias_previstos) VALUES(1, 4);
 INSERT INTO tb_locacao_diaria(id. dias_previstos) VALUES(2, 4);
 
 INSERT INTO tb_locacao_periodo(id, porcentagem) VALUES(3, 50.0);
+
+/* Altera os dados do campo cpf na tabela cliente passando a informação que deseja ser alterada */
+
+UPDATE tb_cliente SET cpf = '58236392715' WHERE cpf = '58236382715v';
