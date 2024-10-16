@@ -83,3 +83,9 @@ CREATE TABLE tb_locaca_periodo(
     porcentagem FLOAT NOT NULL,
     PRIMARY KEY(id)
 );
+
+ALTER TABLE tb_carro ADD FOREIGN KEY(sede_id) REFERENCES tb_sede(codigo);
+
+ALTER TABLE tb_endereco FOREIGN KEY(cidade_id) REFERENCES tb_cidade(id);
+
+ALTER TABLE tb_cidade FOREIGN KEY(estado_id) REFERENCES tb_estado(id);
