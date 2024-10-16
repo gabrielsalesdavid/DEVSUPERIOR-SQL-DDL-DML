@@ -98,3 +98,5 @@ ALTER TABLE tb_locacao ADD FOREIGN KEY(cliente_id) REFERENCES tb_cliente(cpf);
 ALTER TABLE tb_locacao ADD FOREIGN KEY(carro_id) REFERENCES tb_carro(id);
 
 ALTER TABLE tb_locacao ADD FOREIGN KEY(local_retirada_id) REFERENCES tb_sede(codigo);
+
+ALTER TABLE tb_locacao_diaria ADD FOREIGN KEY(id) REFERENCES tb_locacao(id);
