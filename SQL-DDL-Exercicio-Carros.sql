@@ -1,3 +1,5 @@
+/* DDL */
+
 CREATE TABLE tb_categoria(
     id INT NOT NULL,
     descricao VARCHAR(10) NOT NULL,
@@ -14,7 +16,7 @@ CREATE TABLE tb_carro(
     data_aquisicao DATE NOT NULL,
     cat_id INT,
     sede_id INT,
-    PRIMARY KEY(id, placa),
+    PRIMARY KEY(id),
     FOREIGN KEY(cat_id) REFERENCES tb_categoria(id)
 );
 
@@ -59,19 +61,18 @@ CREATE TABLE tb_cliente(
 CREATE TABLE tb_telefone(
     cpf VARCHAR(20) NOT NULL,
     numero VARCHAR(20) UNIQUE NOT NULL,
-    PRIMARY KEY(cpf),
+    PRIMARY KEY(cpf, numero),
     FOREIGN KEY(cpf) REFERENCES tb_cliente(cpf)
 );
 
-CREATE TABLE tb_alocacao(
+CREATE TABLE tb_locacao(
     id INT NOT NULL,
     instante_locacao TIMESTAMP NOT NULL,
     instante_devolucao TIMESTAMP NOT NULL,
 	cliente_id VARCHAR(20),
-    carro_id VARCHAR(10) UNIQUE,
-    local_retirada_id INT,
-    PRIMARY KEY(id),
-    FOREIGN KEY(carro_id) REFERENCES tb_carro(placa)
+    carro_id INT NOT NULL,
+    local_retirada_id INT NOT NULL,
+    PRIMARY KEY(id)
 );
 
 CREATE TABLE tb_locacao_diaria(
@@ -92,6 +93,8 @@ ALTER TABLE tb_endereco ADD FOREIGN KEY(cidade_id) REFERENCES tb_cidade(id);
 
 ALTER TABLE tb_cidade ADD FOREIGN KEY(estado_id) REFERENCES tb_estado(id);
 
-ALTER TABLE tb_alocacao ADD FOREIGN KEY(cliente_id) REFERENCES tb_cliente(cpf);
+ALTER TABLE tb_locacao ADD FOREIGN KEY(cliente_id) REFERENCES tb_cliente(cpf);
 
-ALTER TABLE tb_alocacao ADD FOREIGN KEY(local_retirada_id) REFERENCES tb_sede(codigo);
+ALTER TABLE tb_locacao ADD FOREIGN KEY(carro_id) REFERENCES tb_carro(id);
+
+ALTER TABLE tb_locacao ADD FOREIGN KEY(local_retirada_id) REFERENCES tb_sede(codigo);
