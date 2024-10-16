@@ -55,3 +55,5 @@ ALTER TABLE tb_aluno ALTER COLUMN cpf TYPE VARCHAR(20);
 ALTER TABLE tb_matricula RENAME aluno_id TO aluno_cpf;
 
 ALTER TABLE tb_matricula ALTER COLUMN cpf TYPE VARCHAR;
+
+ALTER TABLE tb_matricula ADD FOREIGN KEY(aluno_cpf) REFERENCES tb_aluno(cpf);
